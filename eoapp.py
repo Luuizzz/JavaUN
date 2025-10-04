@@ -15,6 +15,12 @@ st.title("🔭 Detección de Exoplanetas con IA")
 
 st.sidebar.header("⚙️ Opciones")
 st.sidebar.write("Algun parametro por aqui.")
+page = st.sidebar.selectbox("📄 Navegar a", ["Subir CSV", "Predicción Individual"])
+
+if page == "Subir CSV":
+    # contenido de app.py
+elif page == "Predicción Individual":
+    import predict_one  # o usar multipage si lo despliegas en Streamlit Cloud
 
 uploaded_file = st.file_uploader("📁 Subir archivo CSV con datos de exoplanetas", type=["csv"])
 
