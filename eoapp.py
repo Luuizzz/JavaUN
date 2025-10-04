@@ -13,8 +13,7 @@ st.markdown("""
 
 st.title("🔭 Detección de Exoplanetas con IA")
 
-st.sidebar.header("⚙️ Opciones")
-st.sidebar.write("Algun parametro por aqui.")
+
 page = st.sidebar.selectbox("📄 Navegar a", ["Subir CSV", "Predicción Individual"])
 
 if page == "Subir CSV":
