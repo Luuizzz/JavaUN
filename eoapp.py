@@ -14,9 +14,9 @@ st.markdown("""
 st.title("🔭 Detección de Exoplanetas con IA")
 
 st.sidebar.header("⚙️ Opciones")
-st.sidebar.write("Aquí podrás ajustar parámetros del modelo cuando esté integrado.")
+st.sidebar.write("Algun parametro por aqui.")
 
-uploaded_file = st.file_uploader("📁 Sube tu archivo CSV con datos de exoplanetas", type=["csv"])
+uploaded_file = st.file_uploader("📁 Subir archivo CSV con datos de exoplanetas", type=["csv"])
 
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
@@ -24,7 +24,7 @@ if uploaded_file:
     st.dataframe(df.head())
 
     if st.button("🔍 Analizar con IA"):
-        st.info("🔧 El modelo aún no está conectado. Tu equipo puede integrar aquí la función de predicción.")
+        st.info("🔧 El modelo aún no está subido si o no.")
 
     st.download_button(
         label="📥 Descargar CSV procesado",
