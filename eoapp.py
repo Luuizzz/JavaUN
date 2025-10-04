@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
 
 st.set_page_config(page_title="🔭 Detección de Exoplanetas", layout="wide")
 
@@ -34,7 +33,6 @@ if page == "Subir CSV":
 
 elif page == "Predicción Individual":
     st.title("🧪 Predicción de Exoplaneta por Entrada Manual")
-    model = joblib.load("modelo_entrenado.pkl")  # ajusta si usas torch
 
     period = st.number_input("Período orbital (koi_period)", min_value=0.0)
     duration = st.number_input("Duración del tránsito (koi_duration)", min_value=0.0)
@@ -47,10 +45,7 @@ elif page == "Predicción Individual":
     score = st.number_input("Puntuación del modelo (koi_score)", min_value=0.0)
 
     if st.button("🔍 Predecir"):
-        input_data = np.array([[period, duration, depth, prad, srad, steff, insol, snr, score]])
-        prediction = model.predict(input_data)[0]
-        label = {0: "❌ No es un exoplaneta", 1: "✅ Es un exoplaneta", 2: "🕵️ Candidato"}
-        st.success(f"Resultado: {label.get(prediction, 'Desconocido')}")
+        st.info("🔧 El modelo aún no está conectado. Cuando esté disponible, se mostrará aquí el resultado.")
 
 st.markdown("---")
 st.markdown("Creado por el equipo *Hunting Exoplanets AI* 🚀 | NASA Space Apps Challenge 2025")
